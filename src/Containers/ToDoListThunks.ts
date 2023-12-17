@@ -22,7 +22,7 @@ export const AddNewTask = createAsyncThunk(
 export const EditTask = createAsyncThunk(
   'tasks/edit',
   async (task: Task) => {
-    let taskToUpdate = {...task};
+    const taskToUpdate = {...task};
     delete taskToUpdate.id;
     await axios.put(URL + `tasks/${task.id}.json`, taskToUpdate);
   });

@@ -4,8 +4,8 @@ import Toolbar from './Components/Toolbar/Toolbar';
 import Home from './Containers/Home/Home';
 
 const App = () => (
-  <>
-    <header className="bg-dark">
+  <div className="bg-light">
+    <header className="bg-primary ">
       <Toolbar/>
     </header>
 
@@ -16,7 +16,7 @@ const App = () => (
       </Routes>
     </main>
 
-  </>
+  </div>
 );
 
 export default App;

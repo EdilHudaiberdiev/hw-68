@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {Task} from '../types';
-import {fetchTasks} from './ToDoListThunks';
+import {AddNewTask, DeleteTask, EditTask, fetchTasks} from './ToDoListThunks';
 
 interface ToDoListState {
   tasks: Task[];
@@ -42,6 +42,48 @@ const ToDoListSlice = createSlice({
     });
 
     builder.addCase(fetchTasks.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
+
+    builder.addCase(AddNewTask.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    });
+
+    builder.addCase(AddNewTask.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+
+    builder.addCase(AddNewTask.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
+
+    builder.addCase(EditTask.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    });
+
+    builder.addCase(EditTask.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+
+    builder.addCase(EditTask.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
+
+    builder.addCase(DeleteTask.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    });
+
+    builder.addCase(DeleteTask.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+
+    builder.addCase(DeleteTask.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     });

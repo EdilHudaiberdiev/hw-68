@@ -4,6 +4,7 @@ import {RootState} from '../../app/store';
 import TaskItem from '../../Components/TaskItem/TaskItem';
 import Spinner from '../../Components/UI/Spinner/Spinner';
 import {AppDispatch} from '../../types';
+import AddTask from '../AddTask/AddTask';
 import {fetchTasks} from '../ToDoListThunks';
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
     <div>
       {tasksLoading ? <Spinner/> :
         <>
+          <AddTask/>
           <hr/>
           <div className="tasksList mx-auto">
             {tasks.length > 0 ?
