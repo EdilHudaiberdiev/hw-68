@@ -1,8 +1,11 @@
 import './App.css';
+import Toolbar from './Components/Toolbar/Toolbar';
 
 const App = () => (
   <>
-    content
+   <header>
+     <Toolbar/>
+   </header>
   </>
 );
 
