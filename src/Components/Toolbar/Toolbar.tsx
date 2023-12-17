@@ -3,18 +3,9 @@ import {NavLink} from 'react-router-dom';
 const Toolbar = () => {
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark container">
       <div className="container">
-        <NavLink to='/' className="navbar-brand">TO DO list</NavLink>
-
-        <ul className="navbar-nav mr-auto fles-row gap-2 flex-nowrap">
-          <li className="nav-item">
-            <NavLink to="/" className="nav-link">Home</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/add-meal" className="nav-link">Add task</NavLink>
-          </li>
-        </ul>
+        <NavLink to='/' className="navbar-brand">To Do list</NavLink>
       </div>
     </nav>
   );
